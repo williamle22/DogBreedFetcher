@@ -19,7 +19,7 @@ public class DogApiBreedFetcher implements BreedFetcher {
     private final OkHttpClient client = new OkHttpClient();
 
     @Override
-    public List<String> getSubBreeds(String breed) {
+    public List<String> getSubBreeds(String breed) throws BreedNotFoundException {
         if (breed == null || breed.isBlank()) {
             throw new BreedNotFoundException(String.valueOf(breed));
         }
